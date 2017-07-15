@@ -44,12 +44,17 @@ namespace Skolni_testy.App
 
                 viewToRender = (BaseView)Activator.CreateInstance(view_type, Context, formToRender);
 
-                views.Add(controller, viewToRender);
+                views.Add(controller+action, viewToRender);
             }
 
             formToRender.Controls.Clear();
             viewToRender.Render(data);
                 
+        }
+
+        public void RenderPartial(string name, Dictionary<string, object> data)
+        {
+            RenderView("Partials", name, data);
         }
         public ViewManager(Form formToRender)
         {

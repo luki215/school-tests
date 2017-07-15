@@ -6,6 +6,9 @@ namespace Skolni_testy.Models
     [DataAccessObject]
     public abstract class TestModel : DataAccessObject<Guid>
     {
+        [AutoIncrement]
+        [PersistedMember]
+        public abstract Guid Id { get; set; }
         [PersistedMember]
         public abstract string Name { get; set; }
 

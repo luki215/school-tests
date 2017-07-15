@@ -14,6 +14,8 @@ using MaterialSkin.Controls;
 
 using Skolni_testy.Controllers;
 using Skolni_testy.App;
+using System.Globalization;
+using System.Threading;
 
 namespace Skolni_testy
 {
@@ -23,20 +25,30 @@ namespace Skolni_testy
         {
             InitializeComponent();
 
-            SetUpController.SetUpDB();
+            var db = SetUpController.SetUpDB();
 
+            //set language
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("cs-CZ");
+            this.Text = Properties.Translations.AppName;
 
             // set material graphics
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-
-            var appContext = new SkolniTestyAppContext(new Router(), new ViewManager(this));
+            
+            var appContext = new SkolniTestyAppContext(new Router(), new ViewManager(this), db);
             appContext.Router.Context = appContext;
             appContext.ViewManager.Context = appContext;
 
-            appContext.Router.SwitchTo("MainScreen", "Index", null);
+            appContext.Router.SwitchTo("TeacherTests", "Index", null);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -117,23 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1383, 768</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
+  <data name="AppName" xml:space="preserve">
     <value>Školní testy</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
+  <data name="Back" xml:space="preserve">
+    <value>Zpět</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialForm, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="ChooseYourClass" xml:space="preserve">
+    <value>Vyber svou třídu</value>
+  </data>
+  <data name="ChooseYourName" xml:space="preserve">
+    <value>Vyber své jméno</value>
+  </data>
+  <data name="Classes" xml:space="preserve">
+    <value>Třídy</value>
+  </data>
+  <data name="LectureName" xml:space="preserve">
+    <value>Název předmětu</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Přihlásit se</value>
+  </data>
+  <data name="NewLecture" xml:space="preserve">
+    <value>Nový předmět</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Další</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Heslo</value>
+  </data>
+  <data name="PleaseLogIn" xml:space="preserve">
+    <value>Prosím, přihlašte se</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>Studenti</value>
+  </data>
+  <data name="Teachers" xml:space="preserve">
+    <value>Učitelé</value>
+  </data>
+  <data name="Tests" xml:space="preserve">
+    <value>Testy</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Uživatelské jméno</value>
+  </data>
+  <data name="UsernameOrPasswordInvalid" xml:space="preserve">
+    <value>Špatné uživatelksé jméno nebo heslo</value>
   </data>
 </root>

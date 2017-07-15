@@ -13,7 +13,7 @@ namespace Skolni_testy.Controllers
     {
         protected SkolniTestyAppContext appContext;
         public BaseController(SkolniTestyAppContext appContext) { this.appContext = appContext; }
-        public abstract void ProcessAction(string action, Dictionary<String, String> parameters);
+        public abstract void ProcessAction(string action, Dictionary<string, object> parameters);
     }
     
 }

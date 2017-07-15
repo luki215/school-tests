@@ -11,7 +11,7 @@ namespace Skolni_testy.Controllers
     {
         public AdminController(SkolniTestyAppContext appContext) : base(appContext){}
 
-        override public void ProcessAction(string action, Dictionary<string, string> parameters)
+        override public void ProcessAction(string action, Dictionary<string, object> parameters)
         {
             throw new NotImplementedException();
         }

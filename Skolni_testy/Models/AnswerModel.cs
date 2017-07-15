@@ -7,8 +7,12 @@ using Shaolinq;
 namespace Skolni_testy.Models
 {
     [DataAccessObject]
-    public abstract class AnswerModel : DataAccessObject
+    public abstract class AnswerModel : DataAccessObject<Guid>
     {
+        [AutoIncrement]
+        [PersistedMember]
+        public abstract Guid Id { get; set; }
+
         [PersistedMember]
         public abstract string Answer { get; set; }
 

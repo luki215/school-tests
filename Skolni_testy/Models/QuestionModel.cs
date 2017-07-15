@@ -10,6 +10,10 @@ namespace Skolni_testy.Models
     [DataAccessObject]
     public abstract class QuestionModel : DataAccessObject<Guid>
     {
+        [AutoIncrement]
+        [PersistedMember]
+        public abstract Guid Id { get; set; }
+
         [Index]
         [PersistedMember]
         public abstract string Kind { get; set; }

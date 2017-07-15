@@ -17,7 +17,7 @@ namespace Skolni_testy.App
                 else throw new Exception("Cannot change router context, when is already set");
             } }
         Dictionary<string, BaseController> controllers = new Dictionary<string, BaseController>();
-        public void SwitchTo(string controller, string action, Dictionary<String, String> parameters)
+        public void SwitchTo(string controller, string action, Dictionary<string, object> parameters)
         {
             BaseController processingCtrl;
             if (!controllers.TryGetValue(controller, out processingCtrl))
@@ -32,6 +32,8 @@ namespace Skolni_testy.App
                     throw new NoControllerWithSuchNameException(controller + "Controller");
                 }
 
+                if(ctrl_type == null)
+                    throw new NoControllerWithSuchNameException(controller + "Controller");
                 processingCtrl = (BaseController)Activator.CreateInstance(ctrl_type, Context);
 
                 controllers.Add(controller, processingCtrl);

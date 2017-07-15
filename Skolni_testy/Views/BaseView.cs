@@ -19,5 +19,7 @@ namespace Skolni_testy.Views
             appContext = context;
             this.formToRender = formToRender;
         }
+
+
     }
 }
