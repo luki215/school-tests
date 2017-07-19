@@ -41,7 +41,8 @@ namespace Skolni_testy
             appContext.Router.Context = appContext;
             appContext.ViewManager.Context = appContext;
 
-            appContext.Router.SwitchTo("TeacherTests", "Index", null);
+            appContext.Router.SwitchTo("TeacherTests", "Edit", new Dictionary<string, object> { { "id", db.Tests.Where(t => t.Name == "T1").Select(t => t.Id).First() } });
+            //appContext.Router.SwitchTo("MainScreen", "Index", new Dictionary<string, object> { { "id", db.Tests.First().Id } });
         }
 
         private void Form1_Load(object sender, EventArgs e)

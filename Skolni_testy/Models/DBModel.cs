@@ -24,11 +24,10 @@ namespace Skolni_testy.Models
         public abstract DataAccessObjects<TestModel> Tests { get; }
         [DataAccessObjects]
         public abstract DataAccessObjects<LectureModel> Lectures { get; }
-
-        [DataAccessObjects]
-        public abstract DataAccessObjects<AnswerModel> Answers { get; }
+        
         [DataAccessObjects]
         public abstract DataAccessObjects<QuestionModel> Questions { get; }
+
 
         public static DataAccessModelConfiguration GetDBConfiguration()
         {

@@ -12,9 +12,9 @@ namespace Skolni_testy.Views
     abstract class BaseView
     {
         protected readonly SkolniTestyAppContext appContext;
-        protected readonly Form formToRender;
+        protected readonly Control formToRender;
         public abstract void Render(Dictionary<string, object> data);
-        public BaseView(SkolniTestyAppContext context, Form formToRender)
+        public BaseView(SkolniTestyAppContext context, Control formToRender)
         {
             appContext = context;
             this.formToRender = formToRender;

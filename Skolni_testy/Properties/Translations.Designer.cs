@@ -61,6 +61,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Přidat.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Školní testy.
         /// </summary>
         public static string AppName {
@@ -106,6 +115,33 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Potvrdit.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string Detail {
+            get {
+                return ResourceManager.GetString("Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upravit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Název předmětu.
         /// </summary>
         public static string LectureName {
@@ -124,11 +160,38 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nová odpověď.
+        /// </summary>
+        public static string NewAnswer {
+            get {
+                return ResourceManager.GetString("NewAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nový předmět.
         /// </summary>
         public static string NewLecture {
             get {
                 return ResourceManager.GetString("NewLecture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nová otázka.
+        /// </summary>
+        public static string NewQuestion {
+            get {
+                return ResourceManager.GetString("NewQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nový test.
+        /// </summary>
+        public static string NewTest {
+            get {
+                return ResourceManager.GetString("NewTest", resourceCulture);
             }
         }
         
@@ -169,6 +232,33 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zaškrkávací.
+        /// </summary>
+        public static string QuestionsChoices {
+            get {
+                return ResourceManager.GetString("QuestionsChoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volná odpověď.
+        /// </summary>
+        public static string QuestionsFreeAnswer {
+            get {
+                return ResourceManager.GetString("QuestionsFreeAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadání otázky.
+        /// </summary>
+        public static string QuestionText {
+            get {
+                return ResourceManager.GetString("QuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uložit.
         /// </summary>
         public static string Save {
@@ -196,11 +286,29 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Název testu.
+        /// </summary>
+        public static string TestName {
+            get {
+                return ResourceManager.GetString("TestName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Testy.
         /// </summary>
         public static string Tests {
             get {
                 return ResourceManager.GetString("Tests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test byl úspěšně uložen.
+        /// </summary>
+        public static string TestSuccessfullySaved {
+            get {
+                return ResourceManager.GetString("TestSuccessfullySaved", resourceCulture);
             }
         }
         

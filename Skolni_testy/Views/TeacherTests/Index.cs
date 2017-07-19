@@ -62,9 +62,10 @@ namespace Skolni_testy.Views.TeacherTests
             var test_panel = new Panel();
             test_panel.BackColor = System.Drawing.Color.White;
             test_panel.AutoSize = true;
-            test_panel.Width = p.Width - 20;
             test_panel.Location = new System.Drawing.Point(20, y_from + 30);
             p.Controls.Add(test_panel);
+            test_panel.Height = 0;
+            test_panel.MinimumSize = new System.Drawing.Size(p.Width - 20, 0);
 
             int i = 0;
             foreach (var test in lect.Value)
@@ -73,10 +74,32 @@ namespace Skolni_testy.Views.TeacherTests
                 test_name_label.Text = test.Name;
                 test_panel.Controls.Add(test_name_label);
                 test_name_label.Location = new System.Drawing.Point(0, i * 20);
+
+                var test_details_btn = new Button();
+                test_details_btn.Text = t.Detail;
+                test_details_btn.FlatStyle = FlatStyle.Flat;
+                test_details_btn.Location = new System.Drawing.Point(100, i * 20);
+                test_details_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Show", new Dictionary<string, object> { { "id", test.Id } }); };
+                test_panel.Controls.Add(test_details_btn);
+
+                var test_edit_btn = new Button();
+                test_edit_btn.Text = t.Edit;
+                test_edit_btn.FlatStyle = FlatStyle.Flat;
+                test_edit_btn.Location = new System.Drawing.Point(190, i * 20);
+                test_edit_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Edit", new Dictionary<string, object> { { "id", test.Id } }); };
+                test_panel.Controls.Add(test_edit_btn);
+
                 i++;
             }
 
-            return y_from + i*20 + 20;
+            var new_test_btn = new MaterialFlatButton();
+            new_test_btn.Text = t.NewTest;
+            new_test_btn.Location = new System.Drawing.Point(10, i * 20 +5);
+            new_test_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "New", new Dictionary<string, object> { {"lecture", lect.Key } }); };
+            test_panel.Controls.Add(new_test_btn);
+
+
+            return y_from + i*20 + 32;
         }
     }
 }

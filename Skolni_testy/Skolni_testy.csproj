@@ -62,6 +62,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +83,8 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\MainScreenController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\QuestionTypes\ChoicesController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\TeacherTestsController.cs" />
     <Compile Include="Form1.cs">
@@ -89,10 +94,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
-    <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Class_TestModel.cs" />
     <Compile Include="Models\DBModel.cs" />
     <Compile Include="Models\LectureModel.cs" />
+    <Compile Include="Models\QuestionTypes\FreeAnswerModel.cs" />
+    <Compile Include="Models\QuestionTypes\ChoiceModel.cs" />
     <Compile Include="Models\QuestionModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\ClassModel.cs" />
@@ -112,8 +118,15 @@
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\Lectures\New.cs" />
     <Compile Include="Views\MainScreen\Index.cs" />
+    <Compile Include="Views\Partials\ErrorsInfos.cs" />
+    <Compile Include="Views\Partials\QuestionTypeSelector.cs" />
     <Compile Include="Views\Partials\TeachersTopMenu.cs" />
+    <Compile Include="Views\Questions\Choices\Edit.cs" />
+    <Compile Include="Views\Questions\Choices\New.cs" />
+    <Compile Include="Views\Questions\FreeAnswer\New.cs" />
+    <Compile Include="Views\TeacherTests\Edit.cs" />
     <Compile Include="Views\TeacherTests\Index.cs" />
+    <Compile Include="Views\TeacherTests\New.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -20,8 +20,6 @@ namespace Skolni_testy.Views.MainScreen
         {
             var f = formToRender;
 
-            renderErrors(f, data);
-
             var classes_students = (Dictionary<string, List<string>>)data["classes_students"];
 
             var divider = new MaterialDivider();
@@ -186,53 +184,6 @@ namespace Skolni_testy.Views.MainScreen
             formToRender.Refresh();
         }
 
-        private void renderErrors(Form f, Dictionary<string, object> data)
-        {
-            object error_msg_obj;
-            if (data.TryGetValue("errors", out error_msg_obj))
-            {
-                string error_msg = (string)error_msg_obj;
-
-                var error_panel = new Panel();
-                var error_text = new Label();
-                var error_close_btn = new Button();
-
-                var newlines = error_msg.Count((c) => { return c == '\n'; });
-
-                error_panel.BackColor = System.Drawing.Color.FromArgb(150, 200, 0, 0);
-                error_panel.Controls.Add(error_close_btn);
-                error_panel.Controls.Add(error_text);
-                error_panel.ForeColor = System.Drawing.Color.White;
-                error_panel.Size = new System.Drawing.Size(f.Width, 50 + newlines * 25);
-                error_panel.Location = new System.Drawing.Point(0, 63);
-
-                error_close_btn.BackColor = System.Drawing.Color.Transparent;
-                error_close_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-                error_close_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-                error_close_btn.MouseEnter += (s, a) => { error_close_btn.Font = new System.Drawing.Font(error_close_btn.Font, System.Drawing.FontStyle.Bold); };
-                error_close_btn.MouseLeave += (s, a) => { error_close_btn.Font = new System.Drawing.Font(error_close_btn.Font, System.Drawing.FontStyle.Regular); };
-                error_close_btn.FlatAppearance.BorderSize = 0;
-                error_close_btn.ForeColor = System.Drawing.Color.White;
-                error_close_btn.UseVisualStyleBackColor = false;
-                error_close_btn.Text = "X";
-                error_close_btn.Font = new System.Drawing.Font(error_close_btn.Font.Name, 13);
-                error_close_btn.Width = 30;
-                error_close_btn.Height = 30;
-                error_close_btn.Location = new System.Drawing.Point(f.Width - 30, 5);
-                error_close_btn.FlatStyle = FlatStyle.Flat;
-                error_close_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                error_close_btn.Click += (s, a) => { error_panel.Hide(); };
-            
-                error_text.Text = error_msg;
-                error_text.Font = new System.Drawing.Font(error_text.Font.Name, 15);
-                error_text.Location = new System.Drawing.Point(20, 10);
-                error_text.BackColor = System.Drawing.Color.Transparent;
-                error_text.Width = f.Width - 40;
-                error_text.AutoSize = true;
-
-                f.Controls.Add(error_panel);
-            }
-        }
 
         private void LoadStudentsRadioButtons(List<string> students,  Panel p)
         {

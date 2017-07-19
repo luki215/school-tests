@@ -66,6 +66,30 @@ namespace Skolni_testy.Controllers
                     t2.Name = "T2";
                     t2.Lecture = predmet;
 
+                    var q1 = db.Questions.Create();
+                    q1.Order = 1;
+                    q1.Test = t1;
+                    var q2 = db.Questions.Create();
+                    q2.Order = 2;
+                    q2.Test = t1;
+                    var q3 = db.Questions.Create();
+                    q3.Order = 3;
+                    q3.Test = t1;
+
+                    scope.Complete();
+                }
+
+
+                using (var scope = new DataAccessScope())
+                {
+                    for (int i = 0; i < 10; i++)
+                {
+                        var st = db.Students.Create();
+                        st.Name = "student" + i;
+                        st.Class = db.Classes.First();
+                       
+                    }
+
                     scope.Complete();
                 }
 

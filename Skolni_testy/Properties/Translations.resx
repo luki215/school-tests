@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>Školní testy</value>
   </data>
@@ -132,14 +135,29 @@
   <data name="Classes" xml:space="preserve">
     <value>Třídy</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Potvrdit</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
   <data name="LectureName" xml:space="preserve">
     <value>Název předmětu</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Přihlásit se</value>
   </data>
+  <data name="NewAnswer" xml:space="preserve">
+    <value>Nová odpověď</value>
+  </data>
   <data name="NewLecture" xml:space="preserve">
     <value>Nový předmět</value>
+  </data>
+  <data name="NewQuestion" xml:space="preserve">
+    <value>Nová otázka</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Další</value>
@@ -152,6 +170,15 @@
   </data>
   <data name="Prev" xml:space="preserve">
     <value>Zpět</value>
+  </data>
+  <data name="QuestionsChoices" xml:space="preserve">
+    <value>Zaškrkávací</value>
+  </data>
+  <data name="QuestionsFreeAnswer" xml:space="preserve">
+    <value>Volná odpověď</value>
+  </data>
+  <data name="QuestionText" xml:space="preserve">
+    <value>Zadání otázky</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Uložit</value>
@@ -170,5 +197,14 @@
   </data>
   <data name="UsernameOrPasswordInvalid" xml:space="preserve">
     <value>Špatné uživatelksé jméno nebo heslo</value>
+  </data>
+  <data name="NewTest" xml:space="preserve">
+    <value>Nový test</value>
+  </data>
+  <data name="TestName" xml:space="preserve">
+    <value>Název testu</value>
+  </data>
+  <data name="TestSuccessfullySaved" xml:space="preserve">
+    <value>Test byl úspěšně uložen</value>
   </data>
 </root>
