@@ -88,6 +88,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vyberte třídu pro testování.
+        /// </summary>
+        public static string ChooseClassForTest {
+            get {
+                return ResourceManager.GetString("ChooseClassForTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vyber svou třídu.
         /// </summary>
         public static string ChooseYourClass {
@@ -142,6 +151,24 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dokončen.
+        /// </summary>
+        public static string Finished {
+            get {
+                return ResourceManager.GetString("Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spustit.
+        /// </summary>
+        public static string Launch {
+            get {
+                return ResourceManager.GetString("Launch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Název předmětu.
         /// </summary>
         public static string LectureName {
@@ -156,6 +183,15 @@ namespace Skolni_testy.Properties {
         public static string LogIn {
             get {
                 return ResourceManager.GetString("LogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odhlásit.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
             }
         }
         
@@ -192,6 +228,15 @@ namespace Skolni_testy.Properties {
         public static string NewTest {
             get {
                 return ResourceManager.GetString("NewTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spustit nový test.
+        /// </summary>
+        public static string NewTestInstance {
+            get {
+                return ResourceManager.GetString("NewTestInstance", resourceCulture);
             }
         }
         
@@ -259,11 +304,29 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Výsledky.
+        /// </summary>
+        public static string Results {
+            get {
+                return ResourceManager.GetString("Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uložit.
         /// </summary>
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zastavit.
+        /// </summary>
+        public static string Stop {
+            get {
+                return ResourceManager.GetString("Stop", resourceCulture);
             }
         }
         
@@ -327,6 +390,15 @@ namespace Skolni_testy.Properties {
         public static string UsernameOrPasswordInvalid {
             get {
                 return ResourceManager.GetString("UsernameOrPasswordInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Byl(a) jste úspěšně Odhlášen(a).
+        /// </summary>
+        public static string YouVeBeenLoggedOut {
+            get {
+                return ResourceManager.GetString("YouVeBeenLoggedOut", resourceCulture);
             }
         }
     }

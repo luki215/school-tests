@@ -86,7 +86,17 @@ namespace Skolni_testy.Controllers
        
         }
 
-    public override void ProcessAction(string action, Dictionary<string, object> parameters)
+        private void Show(Dictionary<string, object> parameters)
+        {
+
+            var launchedTests = (from instance in appContext.DB.TestInstances
+                                 where instance.Test == (TestModel)parameters["test"]
+                                 orderby instance.LaunchedAt
+                                 select instance).ToList();
+            appContext.ViewManager.RenderView("TeacherTests", "Show", new Dictionary<string, object> { { "launchedTests", launchedTests }, {"test", parameters["test"] } });
+        }
+
+        public override void ProcessAction(string action, Dictionary<string, object> parameters)
         {
             switch (action)
             {
@@ -95,10 +105,10 @@ namespace Skolni_testy.Controllers
                 case "Edit": Edit(parameters); break;
                 case "New": New(parameters); break;
                 case "Create": Create(parameters); break;
+                case "Show": Show(parameters); break;
                 default: throw new NoSuchActionInController(action, "TeacherTests");
             }
         }
 
-      
     }
 }

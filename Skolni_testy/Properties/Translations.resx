@@ -207,4 +207,28 @@
   <data name="TestSuccessfullySaved" xml:space="preserve">
     <value>Test byl úspěšně uložen</value>
   </data>
+  <data name="ChooseClassForTest" xml:space="preserve">
+    <value>Vyberte třídu pro testování</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Dokončen</value>
+  </data>
+  <data name="Launch" xml:space="preserve">
+    <value>Spustit</value>
+  </data>
+  <data name="NewTestInstance" xml:space="preserve">
+    <value>Spustit nový test</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Výsledky</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Zastavit</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Odhlásit</value>
+  </data>
+  <data name="YouVeBeenLoggedOut" xml:space="preserve">
+    <value>Byl(a) jste úspěšně Odhlášen(a)</value>
+  </data>
 </root>

@@ -19,7 +19,7 @@ namespace Skolni_testy.Models
         [DataAccessObjects]
         public abstract DataAccessObjects<ClassModel> Classes { get; }
         [DataAccessObjects]
-        public abstract DataAccessObjects<Class_TestModel> Classes_Tests { get; }
+        public abstract DataAccessObjects<TestInstanceModel> TestInstances { get; }
         [DataAccessObjects]
         public abstract DataAccessObjects<TestModel> Tests { get; }
         [DataAccessObjects]

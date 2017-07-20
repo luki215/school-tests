@@ -87,6 +87,7 @@
     <Compile Include="Controllers\QuestionTypes\ChoicesController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\TeacherTestsController.cs" />
+    <Compile Include="Controllers\TestInstancesController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +95,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
-    <Compile Include="Models\Class_TestModel.cs" />
+    <Compile Include="Models\TestInstanceModel.cs" />
     <Compile Include="Models\DBModel.cs" />
     <Compile Include="Models\LectureModel.cs" />
     <Compile Include="Models\QuestionTypes\FreeAnswerModel.cs" />
@@ -127,6 +128,8 @@
     <Compile Include="Views\TeacherTests\Edit.cs" />
     <Compile Include="Views\TeacherTests\Index.cs" />
     <Compile Include="Views\TeacherTests\New.cs" />
+    <Compile Include="Views\TeacherTests\Show.cs" />
+    <Compile Include="Views\TestInstances\New.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

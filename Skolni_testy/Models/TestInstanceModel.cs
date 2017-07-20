@@ -7,11 +7,11 @@ using Shaolinq;
 namespace Skolni_testy.Models
 {
     [DataAccessObject]
-    public abstract class Class_TestModel : DataAccessObject<Guid>
+    public abstract class TestInstanceModel : DataAccessObject<Guid>
     {
         [PersistedMember]
         [PrimaryKey]
-        public abstract Guid id { get; set; }
+        public abstract Guid Id { get; set; }
             
         [BackReference]
         public abstract ClassModel Class { get; set; }

@@ -25,8 +25,11 @@ namespace Skolni_testy.Views.TeacherTests
             var lectures_tests = (Dictionary<string, List<TestModel>>)data["LecturesTests"];
 
             var lectures_panel = new Panel();
-            lectures_panel.Size = new System.Drawing.Size (f.Width, f.Height - 155);
+            lectures_panel.Size = new System.Drawing.Size (f.Width-20, f.Height - 155);
             lectures_panel.Location = new System.Drawing.Point(10, 110);
+            lectures_panel.HorizontalScroll.Maximum = 0;
+            lectures_panel.AutoScroll = false;
+            lectures_panel.VerticalScroll.Visible = false;
             lectures_panel.AutoScroll = true;
             f.Controls.Add(lectures_panel);
 
@@ -40,8 +43,15 @@ namespace Skolni_testy.Views.TeacherTests
             var new_lect_btn = new MaterialFlatButton();
             new_lect_btn.Text = t.NewLecture;
             new_lect_btn.Click += (s, e) => { appContext.Router.SwitchTo("Lectures", "New", null); };
-            new_lect_btn.Location = new System.Drawing.Point(60, 430);
+            new_lect_btn.Location = new System.Drawing.Point(60, f.Height-38);
             f.Controls.Add(new_lect_btn);
+
+            var logout_btn = new MaterialFlatButton();
+            logout_btn.Text = t.Logout;
+            logout_btn.Location = new System.Drawing.Point(0, f.Height - 38);
+            logout_btn.Click += (s, e) => { appContext.Router.SwitchTo("MainScreen", "Index", new Dictionary<string, object> { { "infos", t.YouVeBeenLoggedOut } }); };
+            f.Controls.Add(logout_btn);
+
             f.Refresh();
         }
 
@@ -55,7 +65,7 @@ namespace Skolni_testy.Views.TeacherTests
 
 
             var divider = new MaterialDivider();
-            divider.Size = new System.Drawing.Size(p.Width, 2);
+            divider.Size = new System.Drawing.Size(p.Width-30, 2);
             divider.Location = new System.Drawing.Point(0, y_from + 25);
             p.Controls.Add(divider);
 
@@ -73,19 +83,20 @@ namespace Skolni_testy.Views.TeacherTests
                 var test_name_label = new MaterialLabel();
                 test_name_label.Text = test.Name;
                 test_panel.Controls.Add(test_name_label);
+                test_name_label.Size = new System.Drawing.Size(250, 20);
                 test_name_label.Location = new System.Drawing.Point(0, i * 20);
 
                 var test_details_btn = new Button();
                 test_details_btn.Text = t.Detail;
                 test_details_btn.FlatStyle = FlatStyle.Flat;
-                test_details_btn.Location = new System.Drawing.Point(100, i * 20);
-                test_details_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Show", new Dictionary<string, object> { { "id", test.Id } }); };
+                test_details_btn.Location = new System.Drawing.Point(260, i * 20);
+                test_details_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Show", new Dictionary<string, object> { { "test", test } }); };
                 test_panel.Controls.Add(test_details_btn);
 
                 var test_edit_btn = new Button();
                 test_edit_btn.Text = t.Edit;
                 test_edit_btn.FlatStyle = FlatStyle.Flat;
-                test_edit_btn.Location = new System.Drawing.Point(190, i * 20);
+                test_edit_btn.Location = new System.Drawing.Point(350, i * 20);
                 test_edit_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Edit", new Dictionary<string, object> { { "id", test.Id } }); };
                 test_panel.Controls.Add(test_edit_btn);
 
@@ -98,8 +109,8 @@ namespace Skolni_testy.Views.TeacherTests
             new_test_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "New", new Dictionary<string, object> { {"lecture", lect.Key } }); };
             test_panel.Controls.Add(new_test_btn);
 
-
-            return y_from + i*20 + 32;
+           
+            return y_from + i*20 + 92;
         }
     }
 }
