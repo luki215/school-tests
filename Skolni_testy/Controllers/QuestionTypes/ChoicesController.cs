@@ -23,15 +23,37 @@ namespace Skolni_testy.Controllers.QuestionTypes
             switch (action)
             {
                 case "Process": Process(parameters); break;
+                case "SaveAnswer": SaveAnswer(parameters); break;
                 default: throw new NoSuchActionInController(action, "ChoicesController");
             }
         }
 
+        private void SaveAnswer(Dictionary<string, object> parameters)
+        {
+            var qTab = (TabPage)parameters["answerTab"];
+            var question = (QuestionModel)parameters["question"];
+            var student = ((StudentModel Student, ClassModel Class)) appContext.Session["loggedStudent"];
+            var answers = (from MaterialCheckBox ans
+                         in ((Panel)qTab.Controls.Find("AnswersPanel", false).FirstOrDefault()).Controls.OfType<MaterialCheckBox>()
+                          select new Models.QuestionTypes.ChoiceModel.Answer { Text = ans.Text, Checked = ans.Checked }).ToList();
+
+
+            using (var scope = new DataAccessScope())
+            {
+                var ans = appContext.DB.Answers.Create();
+                ans.Question = question;
+                ans.StudentTestInstance = (StudentTestInstanceModel)parameters["test"];
+                ans.Data = JsonConvert.SerializeObject(answers);
+                scope.Complete();
+            }
+
+
+
+            }
+
         private void Process(Dictionary<string, object> parameters)
         {
             var qTab = (TabPage)parameters["questionTab"];
-
-
             var qText = ((TextBox)qTab.Controls.Find("QuestionText", false).FirstOrDefault()).Text;
 
             var qData = new Models.QuestionTypes.ChoiceModel();

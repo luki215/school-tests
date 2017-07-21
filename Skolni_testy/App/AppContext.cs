@@ -18,5 +18,7 @@ namespace Skolni_testy.App
             ViewManager = viewManager;
             DB = db;
         }
+        public Dictionary<string, object> Session = new Dictionary<string, object>();
+            
     }
 }

@@ -304,6 +304,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Znovunačíst testy.
+        /// </summary>
+        public static string RefreshTests {
+            get {
+                return ResourceManager.GetString("RefreshTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Výsledky.
         /// </summary>
         public static string Results {
@@ -336,6 +345,15 @@ namespace Skolni_testy.Properties {
         public static string Students {
             get {
                 return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odevzdat.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
             }
         }
         

@@ -231,4 +231,10 @@
   <data name="YouVeBeenLoggedOut" xml:space="preserve">
     <value>Byl(a) jste úspěšně Odhlášen(a)</value>
   </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Odevzdat</value>
+  </data>
+  <data name="RefreshTests" xml:space="preserve">
+    <value>Znovunačíst testy</value>
+  </data>
 </root>

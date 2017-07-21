@@ -49,7 +49,7 @@ namespace Skolni_testy.Views.TeacherTests
                 q_page.Tag = q.Id;
                 test_tabs.TabPages.Add(q_page);
 
-                appContext.ViewManager.RenderView("Questions.Choices", "Edit", new Dictionary<string, object> { { "questionData", q.QuestionData} }, q_page);
+                appContext.ViewManager.RenderView($"Questions.{q.Kind}", "Edit", new Dictionary<string, object> { { "questionData", q.QuestionData} }, q_page);
 
             }
             

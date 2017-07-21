@@ -43,12 +43,12 @@ namespace Skolni_testy.Views.TeacherTests
             var new_lect_btn = new MaterialFlatButton();
             new_lect_btn.Text = t.NewLecture;
             new_lect_btn.Click += (s, e) => { appContext.Router.SwitchTo("Lectures", "New", null); };
-            new_lect_btn.Location = new System.Drawing.Point(60, f.Height-38);
+            new_lect_btn.Location = new System.Drawing.Point(f.Width-130, f.Height-38);
             f.Controls.Add(new_lect_btn);
 
             var logout_btn = new MaterialFlatButton();
             logout_btn.Text = t.Logout;
-            logout_btn.Location = new System.Drawing.Point(0, f.Height - 38);
+            logout_btn.Location = new System.Drawing.Point(10, f.Height - 38);
             logout_btn.Click += (s, e) => { appContext.Router.SwitchTo("MainScreen", "Index", new Dictionary<string, object> { { "infos", t.YouVeBeenLoggedOut } }); };
             f.Controls.Add(logout_btn);
 

@@ -15,7 +15,9 @@ namespace Skolni_testy.Models
 
         [BackReference]
         public abstract ClassModel Class { get; set; }
-        
+
+        [RelatedDataAccessObjects]
+        public abstract RelatedDataAccessObjects<StudentTestInstanceModel> Tests { get; }
 
     }
 }

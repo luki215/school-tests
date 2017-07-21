@@ -15,15 +15,28 @@ namespace Skolni_testy.Controllers
     {
         public MainScreenController(SkolniTestyAppContext appContext) : base(appContext){}
 
-        public void Index(Dictionary<string, object> parameters)
+
+
+
+        override public void ProcessAction(string action, Dictionary<string, object> parameters)
+        {
+            switch (action)
+            {
+                case "Index": Index(parameters); break;
+                case "TeacherLogin": TeacherLogin(parameters); break;
+                case "SetStudent": SetStudent(parameters); break;
+                default: throw new NoSuchActionInController(action, "MainScreenController");
+            }
+        }
+        private void Index(Dictionary<string, object> parameters)
         {
             var data = parameters ?? new Dictionary<string, object>();
 
-            var classes = appContext.DB.Classes.OrderBy(c=>c.Nazev).ToList();
+            var classes = appContext.DB.Classes.OrderBy(c => c.Nazev).ToList();
 
             var classes_students = (from cl in classes
-                                    let students = cl.Students.Select(c => c.Name).ToList()
-                                    select new { cl, students }).ToDictionary(t => t.cl.Nazev, t => t.students);
+                                    let students = cl.Students.ToList()
+                                    select new { cl, students }).ToDictionary(t => t.cl, t => t.students);
 
 
             data.Add("classes_students", classes_students);
@@ -31,7 +44,7 @@ namespace Skolni_testy.Controllers
             appContext.ViewManager.RenderView("MainScreen", "Index", data);
         }
 
-        public void TeacherLogin(Dictionary<string, object> parameters)
+        private void TeacherLogin(Dictionary<string, object> parameters)
         {
             string username = (string)parameters["username"],
                     password = (string)parameters["password"];
@@ -44,16 +57,11 @@ namespace Skolni_testy.Controllers
 
         }
 
-
-        override public void ProcessAction(string action, Dictionary<string, object> parameters)
+        private void SetStudent(Dictionary<string, object> parameters)
         {
-            switch (action)
-            {
-                case "Index": Index(parameters); break;
-                case "TeacherLogin": TeacherLogin(parameters); break;
-                default: throw new NoSuchActionInController(action, "MainScreenController");
-            }
-        }
+            appContext.Session.Add("loggedStudent", (Student: (StudentModel)parameters["student"], Class: (ClassModel)parameters["class"]));
+            appContext.Router.SwitchTo("StudentTests", "Index", null);
 
+        }
     }
 }

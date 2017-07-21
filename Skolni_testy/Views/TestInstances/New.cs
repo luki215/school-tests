@@ -50,12 +50,12 @@ namespace Skolni_testy.Views.TestInstances
             launch_test_btn.Text = t.Launch;
             launch_test_btn.Location = new System.Drawing.Point(f.Width - 100, f.Height - 38);
             launch_test_btn.Click += (s, e) => {
-                appContext.Router.SwitchTo("TestInstances", "Create", new Dictionary<string, object> {{ "test", data["test"] },
-                                                                                                        { "class", (from cl
+                appContext.Router.SwitchTo("TestInstances", "Create", new Dictionary<string, object> {{ "class", (from cl
                                                                                                                 in student_class_radio_panel.Controls.OfType<MaterialRadioButton>()
                                                                                                                 where cl.Checked
                                                                                                                 select cl.Tag).FirstOrDefault()
-                                                                                                        }                                                                                                    
+                                                                                                        },
+                                                                                                        { "test", data["test"] }  
                 });
 
             };

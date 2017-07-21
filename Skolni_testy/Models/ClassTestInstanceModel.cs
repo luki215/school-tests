@@ -7,7 +7,7 @@ using Shaolinq;
 namespace Skolni_testy.Models
 {
     [DataAccessObject]
-    public abstract class TestInstanceModel : DataAccessObject<Guid>
+    public abstract class ClassTestInstanceModel : DataAccessObject<Guid>
     {
         [PersistedMember]
         [PrimaryKey]
@@ -24,5 +24,8 @@ namespace Skolni_testy.Models
 
         [PersistedMember]
         public abstract DateTime LaunchedAt { get; set; }
+        
+        [RelatedDataAccessObjects]
+        public abstract RelatedDataAccessObjects<StudentTestInstanceModel> StudentTestInstances { get; }
     }
 }

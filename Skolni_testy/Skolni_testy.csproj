@@ -86,6 +86,7 @@
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\QuestionTypes\ChoicesController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
+    <Compile Include="Controllers\StudentTestsController.cs" />
     <Compile Include="Controllers\TeacherTestsController.cs" />
     <Compile Include="Controllers\TestInstancesController.cs" />
     <Compile Include="Form1.cs">
@@ -95,7 +96,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
-    <Compile Include="Models\TestInstanceModel.cs" />
+    <Compile Include="Models\AnswerModel.cs" />
+    <Compile Include="Models\StudentTestInstanceModel.cs" />
+    <Compile Include="Models\ClassTestInstanceModel.cs" />
     <Compile Include="Models\DBModel.cs" />
     <Compile Include="Models\LectureModel.cs" />
     <Compile Include="Models\QuestionTypes\FreeAnswerModel.cs" />
@@ -122,9 +125,12 @@
     <Compile Include="Views\Partials\ErrorsInfos.cs" />
     <Compile Include="Views\Partials\QuestionTypeSelector.cs" />
     <Compile Include="Views\Partials\TeachersTopMenu.cs" />
+    <Compile Include="Views\Questions\Choices\Show.cs" />
     <Compile Include="Views\Questions\Choices\Edit.cs" />
     <Compile Include="Views\Questions\Choices\New.cs" />
     <Compile Include="Views\Questions\FreeAnswer\New.cs" />
+    <Compile Include="Views\StudentTests\Index.cs" />
+    <Compile Include="Views\StudentTests\Show.cs" />
     <Compile Include="Views\TeacherTests\Edit.cs" />
     <Compile Include="Views\TeacherTests\Index.cs" />
     <Compile Include="Views\TeacherTests\New.cs" />

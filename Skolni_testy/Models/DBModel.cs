@@ -19,14 +19,18 @@ namespace Skolni_testy.Models
         [DataAccessObjects]
         public abstract DataAccessObjects<ClassModel> Classes { get; }
         [DataAccessObjects]
-        public abstract DataAccessObjects<TestInstanceModel> TestInstances { get; }
+        public abstract DataAccessObjects<ClassTestInstanceModel> ClassTestInstances { get; }
+        [DataAccessObjects]
+        public abstract DataAccessObjects<StudentTestInstanceModel> StudentTestInstanceModel { get; }
         [DataAccessObjects]
         public abstract DataAccessObjects<TestModel> Tests { get; }
         [DataAccessObjects]
         public abstract DataAccessObjects<LectureModel> Lectures { get; }
-        
+
         [DataAccessObjects]
         public abstract DataAccessObjects<QuestionModel> Questions { get; }
+        [DataAccessObjects]
+        public abstract DataAccessObjects<AnswerModel> Answers { get; }
 
 
         public static DataAccessModelConfiguration GetDBConfiguration()

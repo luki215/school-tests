@@ -20,7 +20,7 @@ namespace Skolni_testy.Views.MainScreen
         {
             var f = formToRender;
 
-            var classes_students = (Dictionary<string, List<string>>)data["classes_students"];
+            var classes_students = (Dictionary<ClassModel, List<StudentModel>>)data["classes_students"];
 
             var divider = new MaterialDivider();
             divider.Width = 2;
@@ -63,7 +63,8 @@ namespace Skolni_testy.Views.MainScreen
             {
                 var rad_btn = new MaterialRadioButton();
                 rad_btn.Location = new System.Drawing.Point(20, i * 30);
-                rad_btn.Text = s_class.Key;
+                rad_btn.Text = s_class.Key.Nazev;
+                rad_btn.Tag = s_class.Key;
                 if (i == 0)
                     rad_btn.Checked = true;
                 student_class_radio_panel.Controls.Add(rad_btn);
@@ -92,7 +93,7 @@ namespace Skolni_testy.Views.MainScreen
             student_class_next_btn.Text = t.Next;
             student_class_next_btn.Location = new System.Drawing.Point(200, 270);
             student_class_next_btn.Click += (object sender, EventArgs e) => { student_choose_class_panel.Hide();
-                                                                              var s_class = class_radio_buttons.FirstOrDefault(r => r.Checked).Text;
+                                                                              var s_class = (ClassModel)class_radio_buttons.FirstOrDefault(r => r.Checked).Tag;
                                                                               
                                                                               LoadStudentsRadioButtons( classes_students[s_class], student_choose_student_radio_panel);
                                                                               student_choose_student_panel.Show(); };
@@ -120,8 +121,8 @@ namespace Skolni_testy.Views.MainScreen
             student_student_next_btn.Location = new System.Drawing.Point(200, 270);
             student_student_next_btn.Click += (object sender, EventArgs e) =>
             {
-                var s_class = class_radio_buttons.FirstOrDefault(r => r.Checked).Text;
-                var s_name = student_choose_student_radio_panel.Controls.OfType<MaterialRadioButton>().FirstOrDefault(r => r.Checked).Text;
+                var s_class = class_radio_buttons.FirstOrDefault(r => r.Checked).Tag;
+                var s_name = student_choose_student_radio_panel.Controls.OfType<MaterialRadioButton>().FirstOrDefault(r => r.Checked).Tag;
                 appContext.Router.SwitchTo("MainScreen", "SetStudent", new Dictionary<string, object> { { "class", s_class }, { "student", s_name } });
             };
             student_choose_student_panel.Controls.Add(student_student_next_btn);
@@ -185,16 +186,17 @@ namespace Skolni_testy.Views.MainScreen
         }
 
 
-        private void LoadStudentsRadioButtons(List<string> students,  Panel p)
+        private void LoadStudentsRadioButtons(List<StudentModel> students,  Panel p)
         {
             p.Controls.Clear();
             int i = 0;
-            foreach (var s_class in students)
+            foreach (var student in students)
             {
                 var rad_btn = new MaterialRadioButton();
                 rad_btn.Location = new System.Drawing.Point(20, i * 30);
-                rad_btn.Text = s_class;
+                rad_btn.Text = student.Name;
                 rad_btn.BackColor = System.Drawing.Color.White;
+                rad_btn.Tag = student;
                 if (i == 0)
                     rad_btn.Checked = true;
                 p.Controls.Add(rad_btn);

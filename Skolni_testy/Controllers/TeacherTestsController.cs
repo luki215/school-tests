@@ -89,7 +89,7 @@ namespace Skolni_testy.Controllers
         private void Show(Dictionary<string, object> parameters)
         {
 
-            var launchedTests = (from instance in appContext.DB.TestInstances
+            var launchedTests = (from instance in appContext.DB.ClassTestInstances
                                  where instance.Test == (TestModel)parameters["test"]
                                  orderby instance.LaunchedAt
                                  select instance).ToList();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Skolni_testy.Views;
 using System.Windows.Forms;
 using System.ComponentModel;
+using Skolni_testy.Models;
 
 namespace Skolni_testy.App
 {
@@ -34,6 +35,7 @@ namespace Skolni_testy.App
         {
             BaseView viewToRender;
 
+            //get view from params and set it up
             if (!views.TryGetValue((controller+action,target), out viewToRender))
             {
 
@@ -61,6 +63,7 @@ namespace Skolni_testy.App
                 target.Controls.Clear();
 
             viewToRender.Render(data);
+
             //render errors
             if (data != null &&
                 controller != "Partials" &&
@@ -69,7 +72,17 @@ namespace Skolni_testy.App
             )
                 RenderPartial("ErrorsInfos", data);
 
-            
+            //set form header if there's logged student
+            object student;
+            if (Context.Session.TryGetValue("loggedStudent", out student))
+            {
+                var (st, st_class) = ((StudentModel, ClassModel))student;
+                formToRender.Text = Properties.Translations.AppName + ":  " + st.Name + " - " + st_class.Nazev;
+            }
+            else
+                formToRender.Text = Properties.Translations.AppName;
+
+            target.Refresh();
 
         }
         public void RenderPartial(string name, Dictionary<string, object> data) { RenderPartial(name, data, formToRender); }

@@ -20,7 +20,7 @@ namespace Skolni_testy.Models
 
 
         [RelatedDataAccessObjects]
-        public abstract RelatedDataAccessObjects<TestInstanceModel> Class_Tests { get; }
+        public abstract RelatedDataAccessObjects<ClassTestInstanceModel> Class_Tests { get; }
 
         [RelatedDataAccessObjects]
         public abstract RelatedDataAccessObjects<StudentModel> Students { get; }

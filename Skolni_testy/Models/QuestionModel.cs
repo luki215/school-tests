@@ -31,8 +31,10 @@ namespace Skolni_testy.Models
         [BackReference]
         public abstract TestModel Test { get; set; }
 
-        
-        
+        [RelatedDataAccessObjects]
+        public abstract RelatedDataAccessObjects<AnswerModel> Answers { get; }
+
+
         public static(string Name, string Translation)[] QuestionTypes = new ValueTuple<string, string>[] {   ("Choices", Properties.Translations.QuestionsChoices),
                                                                                                         ("FreeAnswer", Properties.Translations.QuestionsFreeAnswer) };
 }

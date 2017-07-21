@@ -23,16 +23,16 @@ namespace Skolni_testy.Controllers
                 case "Create": Create(parameters); break;
                 case "Stop": Stop(parameters); break;
                 case "Results": Results(parameters); break;
-                default: throw new NoSuchActionInController(action, "TeacherTests");
+                default: throw new NoSuchActionInController(action, "TestsInstances");
             }
         }
 
         private void Stop(Dictionary<string, object> parameters)
         {
-            var instance = (TestInstanceModel)parameters["testInstance"];
+            var instance = (ClassTestInstanceModel)parameters["testInstance"];
             using (var scope = new DataAccessScope())
             {
-                var instance_f = appContext.DB.TestInstances.GetByPrimaryKey(instance.Id);
+                var instance_f = appContext.DB.ClassTestInstances.GetByPrimaryKey(instance.Id);
                 instance_f.Active = false;
                 scope.CompleteAsync();
             }
@@ -51,7 +51,7 @@ namespace Skolni_testy.Controllers
 
             using (var scope = new DataAccessScope())
             {
-                var testInstance = appContext.DB.TestInstances.Create();
+                var testInstance = appContext.DB.ClassTestInstances.Create();
 
                 testInstance.Active = true;
                 testInstance.Class = tested_class;

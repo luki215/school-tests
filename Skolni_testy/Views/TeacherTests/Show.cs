@@ -22,7 +22,7 @@ namespace Skolni_testy.Views.TeacherTests
             appContext.ViewManager.RenderPartial("TeachersTopMenu", new Dictionary<string, object> { { "active", "Tests" } });
 
 
-            var launchedTests = (List<TestInstanceModel>)data["launchedTests"];
+            var launchedTests = (List<ClassTestInstanceModel>)data["launchedTests"];
 
             var tests_panel = new Panel();
             tests_panel.Size = new System.Drawing.Size(f.Width - 20, f.Height - 155);
@@ -102,9 +102,7 @@ namespace Skolni_testy.Views.TeacherTests
 
             };
             f.Controls.Add(back_btn);
-
-
-            f.Refresh();
+            
         }
     }
 }
