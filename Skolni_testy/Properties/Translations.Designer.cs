@@ -133,11 +133,29 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Správně.
+        /// </summary>
+        public static string Correct {
+            get {
+                return ResourceManager.GetString("Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detail.
         /// </summary>
         public static string Detail {
             get {
                 return ResourceManager.GetString("Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neznámo.
+        /// </summary>
+        public static string DontKnow {
+            get {
+                return ResourceManager.GetString("DontKnow", resourceCulture);
             }
         }
         
@@ -408,6 +426,15 @@ namespace Skolni_testy.Properties {
         public static string UsernameOrPasswordInvalid {
             get {
                 return ResourceManager.GetString("UsernameOrPasswordInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Špatně.
+        /// </summary>
+        public static string Wrong {
+            get {
+                return ResourceManager.GetString("Wrong", resourceCulture);
             }
         }
         

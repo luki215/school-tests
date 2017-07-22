@@ -11,6 +11,8 @@ namespace Skolni_testy.Models
     public abstract class AnswerModel : DataAccessObject<Guid>
     {
 
+        public enum AnswerStatus { OK, Wrong, DontKnow }
+
         [BackReference]
         public abstract StudentTestInstanceModel StudentTestInstance { get; set; }
         
@@ -19,5 +21,8 @@ namespace Skolni_testy.Models
 
         [PersistedMember]
         public abstract string Data { get; set; }
+
+        [PersistedMember]
+        public abstract AnswerStatus Correct { get; set; }
     }
 }

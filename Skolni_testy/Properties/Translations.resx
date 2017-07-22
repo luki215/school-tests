@@ -237,4 +237,13 @@
   <data name="RefreshTests" xml:space="preserve">
     <value>Znovunačíst testy</value>
   </data>
+  <data name="Correct" xml:space="preserve">
+    <value>Správně</value>
+  </data>
+  <data name="DontKnow" xml:space="preserve">
+    <value>Neznámo</value>
+  </data>
+  <data name="Wrong" xml:space="preserve">
+    <value>Špatně</value>
+  </data>
 </root>

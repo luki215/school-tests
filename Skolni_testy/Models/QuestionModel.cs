@@ -37,5 +37,10 @@ namespace Skolni_testy.Models
 
         public static(string Name, string Translation)[] QuestionTypes = new ValueTuple<string, string>[] {   ("Choices", Properties.Translations.QuestionsChoices),
                                                                                                         ("FreeAnswer", Properties.Translations.QuestionsFreeAnswer) };
-}
+
+        internal AnswerModel.AnswerStatus CorrectStatus(AnswerModel ans)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

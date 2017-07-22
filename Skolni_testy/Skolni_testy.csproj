@@ -125,11 +125,13 @@
     <Compile Include="Views\Partials\ErrorsInfos.cs" />
     <Compile Include="Views\Partials\QuestionTypeSelector.cs" />
     <Compile Include="Views\Partials\TeachersTopMenu.cs" />
+    <Compile Include="Views\Questions\Choices\Result.cs" />
     <Compile Include="Views\Questions\Choices\Show.cs" />
     <Compile Include="Views\Questions\Choices\Edit.cs" />
     <Compile Include="Views\Questions\Choices\New.cs" />
     <Compile Include="Views\Questions\FreeAnswer\New.cs" />
     <Compile Include="Views\StudentTests\Index.cs" />
+    <Compile Include="Views\StudentTests\Results.cs" />
     <Compile Include="Views\StudentTests\Show.cs" />
     <Compile Include="Views\TeacherTests\Edit.cs" />
     <Compile Include="Views\TeacherTests\Index.cs" />

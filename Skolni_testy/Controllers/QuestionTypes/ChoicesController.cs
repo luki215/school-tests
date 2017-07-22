@@ -44,6 +44,7 @@ namespace Skolni_testy.Controllers.QuestionTypes
                 ans.Question = question;
                 ans.StudentTestInstance = (StudentTestInstanceModel)parameters["test"];
                 ans.Data = JsonConvert.SerializeObject(answers);
+                ans.Correct = (JsonConvert.DeserializeObject<Models.QuestionTypes.ChoiceModel>(ans.Question.QuestionData)).CorrectStatus(answers);
                 scope.Complete();
             }
 

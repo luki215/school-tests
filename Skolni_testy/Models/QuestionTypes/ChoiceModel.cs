@@ -17,6 +17,18 @@ namespace Skolni_testy.Models.QuestionTypes
             public bool Checked { get; set; }
         }
         
-        public IEnumerable<Answer> answers;
+        public IEnumerable<Answer> answers; 
+
+        public AnswerModel.AnswerStatus CorrectStatus(IList<Answer> answers)
+        {
+            int i = 0;
+            foreach(var ans in this.answers)
+            {
+                if (answers[i].Checked != ans.Checked)
+                    return AnswerModel.AnswerStatus.Wrong;
+                i++;
+            }
+            return AnswerModel.AnswerStatus.OK;
+        }
     }
 }

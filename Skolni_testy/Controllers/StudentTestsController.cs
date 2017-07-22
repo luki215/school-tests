@@ -25,8 +25,36 @@ namespace Skolni_testy.Controllers
                 case "Show": Show(parameters); break;
                 case "Submit": Submit(parameters); break;
                 case "Logout": Logout(parameters); break;
+                case "Results": Results(parameters); break;
                 default: throw new NoSuchActionInController(action, "StudentTests");
             }
+        }
+
+        private void Results(Dictionary<string, object> parameters)
+        {
+            var student_test = (StudentTestInstanceModel)parameters["test"];
+            int OK, Wrong, DontKnow;
+            OK = Wrong = DontKnow = 0;
+
+            foreach(var ans in student_test.Answers)
+            {
+                switch (ans.Correct)
+                {
+                    case AnswerModel.AnswerStatus.OK: OK++;
+                        break;
+                    case AnswerModel.AnswerStatus.Wrong: Wrong++;
+                        break;
+                    case AnswerModel.AnswerStatus.DontKnow: DontKnow++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            appContext.ViewManager.RenderView("StudentTests", "Results", new Dictionary<string, object> {   { "answers", student_test.Answers.OrderBy(t=>t.Question.Order)},
+                                                                                                            { "answerStats", (OK, Wrong, DontKnow) }
+            });
+
         }
 
         private void Logout(Dictionary<string, object> parameters)
@@ -47,7 +75,7 @@ namespace Skolni_testy.Controllers
                 var q_type = a.Question.Kind;
                 appContext.Router.SwitchTo($"QuestionTypes.{q_type}", "SaveAnswer", new Dictionary<string, object> { { "answerTab", a.Tab }, { "question", a.Question }, { "test", parameters["test"] } });
             }
-            appContext.Router.SwitchTo($"StudentTests", "Logout", new Dictionary<string, object> { { "infos", Properties.Translations.TestSuccessfullySaved } });
+            appContext.Router.SwitchTo($"StudentTests", "Results", new Dictionary<string, object> { { "test", parameters["test"] } });
         }
 
         private void Show(Dictionary<string, object> parameters)
