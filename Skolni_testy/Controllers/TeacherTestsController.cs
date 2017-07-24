@@ -109,6 +109,5 @@ namespace Skolni_testy.Controllers
                 default: throw new NoSuchActionInController(action, "TeacherTests");
             }
         }
-
     }
 }

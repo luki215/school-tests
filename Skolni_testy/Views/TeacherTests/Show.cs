@@ -81,7 +81,7 @@ namespace Skolni_testy.Views.TeacherTests
                     test_results_btn.Text = t.Results;
                     test_results_btn.FlatStyle = FlatStyle.Flat;
                     test_results_btn.Location = new System.Drawing.Point(380, i * 20);
-                    test_results_btn.Click += (s, e) => { appContext.Router.SwitchTo("TestInstances", "Results", new Dictionary<string, object> { { "id", test.Id } }); };
+                    test_results_btn.Click += (s, e) => { appContext.Router.SwitchTo("TestInstances", "Results", new Dictionary<string, object> { { "test", test } }); };
                     tests_panel.Controls.Add(test_results_btn);
                 }
 

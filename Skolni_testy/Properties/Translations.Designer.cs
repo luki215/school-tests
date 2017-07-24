@@ -286,7 +286,7 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Spustit nový test.
+        ///   Looks up a localized string similar to Spustit test.
         /// </summary>
         public static string NewTestInstance {
             get {

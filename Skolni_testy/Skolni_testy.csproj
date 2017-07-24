@@ -133,6 +133,7 @@
     <Compile Include="Views\Questions\Choices\Show.cs" />
     <Compile Include="Views\Questions\Choices\Edit.cs" />
     <Compile Include="Views\Questions\Choices\New.cs" />
+    <Compile Include="Views\Questions\Choices\TeacherResult.cs" />
     <Compile Include="Views\Questions\FreeAnswer\New.cs" />
     <Compile Include="Views\StudentTests\Index.cs" />
     <Compile Include="Views\StudentTests\Results.cs" />
@@ -140,8 +141,10 @@
     <Compile Include="Views\TeacherTests\Edit.cs" />
     <Compile Include="Views\TeacherTests\Index.cs" />
     <Compile Include="Views\TeacherTests\New.cs" />
+    <Compile Include="Views\TestInstances\Results.cs" />
     <Compile Include="Views\TeacherTests\Show.cs" />
     <Compile Include="Views\TestInstances\New.cs" />
+    <Compile Include="Views\TestInstances\ResultsDetail.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

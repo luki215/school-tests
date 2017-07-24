@@ -23,8 +23,39 @@ namespace Skolni_testy.Controllers
                 case "Create": Create(parameters); break;
                 case "Stop": Stop(parameters); break;
                 case "Results": Results(parameters); break;
+                case "ResultsDetail": ResultsDetail(parameters); break;
                 default: throw new NoSuchActionInController(action, "TestsInstances");
             }
+        }
+
+        private void ResultsDetail(Dictionary<string, object> parameters)
+        {
+            var student_test = (StudentTestInstanceModel)parameters["test"];
+            int OK, Wrong, DontKnow;
+            OK = Wrong = DontKnow = 0;
+
+            foreach (var ans in student_test.Answers)
+            {
+                switch (ans.Correct)
+                {
+                    case AnswerModel.AnswerStatus.OK:
+                        OK++;
+                        break;
+                    case AnswerModel.AnswerStatus.Wrong:
+                        Wrong++;
+                        break;
+                    case AnswerModel.AnswerStatus.DontKnow:
+                        DontKnow++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            appContext.ViewManager.RenderView("TestInstances", "ResultsDetail", new Dictionary<string, object> {
+                                                                                                            { "answers", student_test.Answers.OrderBy(t=>t.Question.Order)},
+                                                                                                            { "answerStats", (OK, Wrong, DontKnow) }
+            });
         }
 
         private void Stop(Dictionary<string, object> parameters)
@@ -41,7 +72,11 @@ namespace Skolni_testy.Controllers
 
         private void Results(Dictionary<string, object> parameters)
         {
-            throw new NotImplementedException();
+            var test = (ClassTestInstanceModel)parameters["test"];
+
+            var st_tests = test.StudentTestInstances;
+
+            appContext.ViewManager.RenderView("TestInstances", "Results", new Dictionary<string, object> { { "st_tests", st_tests } });
         }
 
         private void Create(Dictionary<string, object> parameters)
