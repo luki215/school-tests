@@ -249,4 +249,13 @@
   <data name="Done" xml:space="preserve">
     <value>Hotovo</value>
   </data>
+  <data name="NewClassName" xml:space="preserve">
+    <value>Název nové třídy</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Odstranit</value>
+  </data>
+  <data name="NewStudent" xml:space="preserve">
+    <value>Nový student</value>
+  </data>
 </root>

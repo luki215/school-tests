@@ -142,6 +142,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Odstranit.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detail.
         /// </summary>
         public static string Detail {
@@ -232,6 +241,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Název nové třídy.
+        /// </summary>
+        public static string NewClassName {
+            get {
+                return ResourceManager.GetString("NewClassName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nový předmět.
         /// </summary>
         public static string NewLecture {
@@ -246,6 +264,15 @@ namespace Skolni_testy.Properties {
         public static string NewQuestion {
             get {
                 return ResourceManager.GetString("NewQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nový student.
+        /// </summary>
+        public static string NewStudent {
+            get {
+                return ResourceManager.GetString("NewStudent", resourceCulture);
             }
         }
         

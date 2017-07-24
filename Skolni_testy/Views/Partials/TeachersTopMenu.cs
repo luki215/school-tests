@@ -20,7 +20,7 @@ namespace Skolni_testy.Views.Partials
             var f = formToRender;
             var active = (string)data["active"];
 
-            var menu_items = new[]{ new {Text = t.Tests, Controller = "Tests", Action = "Index"},
+            var menu_items = new[]{ new {Text = t.Tests, Controller = "TeacherTests", Action = "Index"},
                                      new {Text = t.Classes, Controller = "Classes", Action = "Index"},
                                      new {Text = t.Teachers, Controller = "Admin", Action = "Index"}
             };

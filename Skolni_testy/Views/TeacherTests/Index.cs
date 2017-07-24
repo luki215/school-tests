@@ -20,7 +20,7 @@ namespace Skolni_testy.Views.TeacherTests
         {
             var f = formToRender;
 
-            appContext.ViewManager.RenderPartial("TeachersTopMenu", new Dictionary<string, object> { {"active", "Tests"}});
+            appContext.ViewManager.RenderPartial("TeachersTopMenu", new Dictionary<string, object> { {"active", "TeacherTests"}});
 
             var lectures_tests = (Dictionary<string, List<TestModel>>)data["LecturesTests"];
 

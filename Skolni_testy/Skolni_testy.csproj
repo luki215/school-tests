@@ -81,11 +81,13 @@
     <Compile Include="App\ViewManager.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\MainScreenController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\QuestionTypes\ChoicesController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudentTestsController.cs" />
     <Compile Include="Controllers\TeacherTestsController.cs" />
     <Compile Include="Controllers\TestInstancesController.cs" />
@@ -120,6 +122,8 @@
       <DependentUpon>Translations.resx</DependentUpon>
     </Compile>
     <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\Classes\Index.cs" />
+    <Compile Include="Views\Classes\Show.cs" />
     <Compile Include="Views\Lectures\New.cs" />
     <Compile Include="Views\MainScreen\Index.cs" />
     <Compile Include="Views\Partials\ErrorsInfos.cs" />
