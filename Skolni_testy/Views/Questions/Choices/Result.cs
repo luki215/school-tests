@@ -22,6 +22,7 @@ namespace Skolni_testy.Views.Questions.Choices
         public override void Render(Dictionary<string, object> data)
         {
             var answer = (AnswerModel)data["answer"];
+            var usr_answers = JsonConvert.DeserializeObject<List<ChoiceModel.Answer>>(answer.Data);
             var qData = answer.Question.QuestionData;
             var q = JsonConvert.DeserializeObject<ChoiceModel>(qData) ?? new ChoiceModel();
             var f = formToRender;
@@ -51,15 +52,24 @@ namespace Skolni_testy.Views.Questions.Choices
 
 
             int i = 0;
-            foreach (var a in (q.answers ?? new List<ChoiceModel.Answer>()))
+            var ans_corret_ans_list = (q.answers).Zip(usr_answers, (corr, ans) =>  ( corr, ans)  );
+            foreach (var (correct_ans, usr_ans) in ans_corret_ans_list)
             {
+                var status_label = new MaterialLabel();
+                if(correct_ans.Checked == usr_ans.Checked ) status_label.Text = "√";
+                else status_label.Text = "X";
+                status_label.Location = new System.Drawing.Point(0, i * 30);
+                status_label.Width = 20;
+                answersPanel.Controls.Add(status_label);
+
                 var ans = new MaterialCheckBox();
-                ans.Text = a.Text;
-                ans.Location = new System.Drawing.Point(0, i * 30);
+                ans.Text = correct_ans.Text;
+                ans.Checked = correct_ans.Checked;
+                ans.Location = new System.Drawing.Point(20, i * 30);
                 ans.Size = new System.Drawing.Size(200, 30);
                 ans.Enabled = false;
                 answersPanel.Controls.Add(ans);
-                ans.Tag = a;
+                ans.Tag = correct_ans;
                 i++;
             }
 

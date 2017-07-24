@@ -31,7 +31,7 @@ namespace Skolni_testy.Views.StudentTests
             var results = new MaterialLabel();
             results.Size = new System.Drawing.Size(600, 20);
             results.Location = new System.Drawing.Point(120, 80);
-            results.Text = t.Correct + " √: " + OK + ";      " + t.Wrong + " X:" + Wrong + ";       " + t.DontKnow +" ?:" + DontKnow;
+            results.Text = t.Correct + " (√) : " + OK + ";      " + t.Wrong + " (X) :" + Wrong + ";       " + t.DontKnow +" (?) :" + DontKnow;
 
             f.Controls.Add(results);
 
@@ -72,13 +72,10 @@ namespace Skolni_testy.Views.StudentTests
 
 
             var save_test_btn = new MaterialFlatButton();
-            save_test_btn.Text = t.Submit;
+            save_test_btn.Text = t.Done;
             save_test_btn.Location = new System.Drawing.Point(f.Width - 150, f.Height - 38);
             save_test_btn.Click += (s, e) => {
-                appContext.Router.SwitchTo("StudentTests", "Submit", new Dictionary<string, object> {
-                                                                                                    { "test",  data["test"] },
-                                                                                                    { "questionsTabs", test_tabs }
-                });
+                appContext.Router.SwitchTo("MainScreen", "Index", null);
 
             };
             f.Controls.Add(save_test_btn);

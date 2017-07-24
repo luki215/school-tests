@@ -246,4 +246,7 @@
   <data name="Wrong" xml:space="preserve">
     <value>Špatně</value>
   </data>
+  <data name="Done" xml:space="preserve">
+    <value>Hotovo</value>
+  </data>
 </root>

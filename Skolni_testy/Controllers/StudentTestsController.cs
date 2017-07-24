@@ -70,6 +70,8 @@ namespace Skolni_testy.Controllers
 
             var answers = from TabPage tab in tabs.TabPages select (Tab: tab, Question: (QuestionModel)tab.Tag);
 
+            var test = answers.First().Question.Test;
+
             foreach (var a in answers)
             {
                 var q_type = a.Question.Kind;

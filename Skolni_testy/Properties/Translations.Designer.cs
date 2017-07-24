@@ -151,6 +151,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hotovo.
+        /// </summary>
+        public static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Neznámo.
         /// </summary>
         public static string DontKnow {
