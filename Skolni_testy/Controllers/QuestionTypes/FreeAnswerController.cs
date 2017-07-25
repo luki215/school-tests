@@ -12,9 +12,9 @@ using Skolni_testy.Models;
 
 namespace Skolni_testy.Controllers.QuestionTypes
 {
-    class ChoicesController : BaseController
+    class FreeAnswerController : BaseController
     {
-        public ChoicesController(SkolniTestyAppContext appContext) : base(appContext)
+        public FreeAnswerController(SkolniTestyAppContext appContext) : base(appContext)
         {
         }
 
@@ -24,20 +24,31 @@ namespace Skolni_testy.Controllers.QuestionTypes
             {
                 case "Process": Process(parameters); break;
                 case "SaveAnswer": SaveAnswer(parameters); break;
+                case "MarkCorrect": MarkCorrect(parameters); break;
                 default: throw new NoSuchActionInController(action, "ChoicesController");
             }
         }
+        private void MarkCorrect(Dictionary<string, object> parameters)
+        {
 
-     
-
+            var correct = (bool)parameters["correct"];
+            var answer = (AnswerModel)parameters["answer"];
+            using (var scope = new DataAccessScope())
+            {
+                var ans_model = appContext.DB.Answers.GetReference(answer);
+                if (correct) ans_model.Correct = AnswerModel.AnswerStatus.OK;
+                else ans_model.Correct = AnswerModel.AnswerStatus.Wrong;
+                scope.Complete();
+            }
+            appContext.Router.SwitchTo("TestInstances", "ResultsDetail", new Dictionary<string, object> { {"test", parameters["test"] } } );
+        }
         private void SaveAnswer(Dictionary<string, object> parameters)
         {
             var qTab = (TabPage)parameters["answerTab"];
             var question = (QuestionModel)parameters["question"];
-            var student = ((StudentModel Student, ClassModel Class)) appContext.Session["loggedStudent"];
-            var answers = (from MaterialCheckBox ans
-                         in ((Panel)qTab.Controls.Find("AnswersPanel", false).FirstOrDefault()).Controls.OfType<MaterialCheckBox>()
-                          select new Models.QuestionTypes.ChoiceModel.Answer { Text = ans.Text, Checked = ans.Checked }).ToList();
+            var student = ((StudentModel Student, ClassModel Class))appContext.Session["loggedStudent"];
+            var answer_text = qTab.Controls.Find("Answer", false).FirstOrDefault().Text;
+            var answer = new Models.QuestionTypes.FreeAnswerModel.Answer { Text = answer_text};
 
 
             using (var scope = new DataAccessScope())
@@ -45,8 +56,8 @@ namespace Skolni_testy.Controllers.QuestionTypes
                 var ans = appContext.DB.Answers.Create();
                 ans.Question = question;
                 ans.StudentTestInstance = (StudentTestInstanceModel)parameters["test"];
-                ans.Data = JsonConvert.SerializeObject(answers);
-                ans.Correct = (JsonConvert.DeserializeObject<Models.QuestionTypes.ChoiceModel>(ans.Question.QuestionData)).CorrectStatus(answers);
+                ans.Data = JsonConvert.SerializeObject(answer);
+                ans.Correct =AnswerModel.AnswerStatus.DontKnow;
                 scope.Complete();
             }
 
@@ -59,17 +70,8 @@ namespace Skolni_testy.Controllers.QuestionTypes
             var qTab = (TabPage)parameters["questionTab"];
             var qText = ((TextBox)qTab.Controls.Find("QuestionText", false).FirstOrDefault()).Text;
 
-            var qData = new Models.QuestionTypes.ChoiceModel();
+            var qData = new Models.QuestionTypes.FreeAnswerModel();
             qData.QuestionText = qText;
-
-            var answers = from MaterialCheckBox ans
-                          in ((Panel)qTab.Controls.Find("AnswersPanel", false).FirstOrDefault()).Controls.OfType<MaterialCheckBox>()
-                          select new Models.QuestionTypes.ChoiceModel.Answer { Text = ans.Text, Checked = ans.Checked };
-
-            //var a = answers.ToList();
-            var a = qTab.Controls.Find("AnswersPanel", false);
-            Console.WriteLine( answers.Count());
-            qData.answers = answers;
 
             using (var scope = new DataAccessScope())
             {
@@ -86,7 +88,7 @@ namespace Skolni_testy.Controllers.QuestionTypes
                 }
 
                 question.QuestionData = JsonConvert.SerializeObject(qData);
-                question.Kind = "Choices";
+                question.Kind = "FreeAnswer";
                 question.Order = int.Parse(qTab.Text);
                 question.Test = (TestModel)parameters["test"];
 

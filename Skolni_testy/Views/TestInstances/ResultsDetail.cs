@@ -54,7 +54,7 @@ namespace Skolni_testy.Views.TestInstances
                 q_page.Tag = a;
                 test_tabs.TabPages.Add(q_page);
 
-                appContext.ViewManager.RenderView($"Questions.{a.Question.Kind}", "Result", new Dictionary<string, object> { { "answer", a } }, q_page);
+                appContext.ViewManager.RenderView($"Questions.{a.Question.Kind}", "TeacherResult", new Dictionary<string, object> { { "answer", a }, { "test", data["test"] } }, q_page);
 
             }
 

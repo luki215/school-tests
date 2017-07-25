@@ -11,11 +11,11 @@ namespace Skolni_testy.Models.QuestionTypes
     {
         public string QuestionText { get; set; }
 
+        
         public struct Answer
         {
             public string Text;
         }
         
-        public List<Answer> answers;
     }
 }

@@ -258,4 +258,13 @@
   <data name="NewStudent" xml:space="preserve">
     <value>Nový student</value>
   </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Odpověď</value>
+  </data>
+  <data name="MarkCorrect" xml:space="preserve">
+    <value>Označit jako správně</value>
+  </data>
+  <data name="MarkIncorrect" xml:space="preserve">
+    <value>Označit jako špatně</value>
+  </data>
 </root>

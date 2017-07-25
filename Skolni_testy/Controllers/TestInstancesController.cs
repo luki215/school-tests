@@ -54,6 +54,7 @@ namespace Skolni_testy.Controllers
 
             appContext.ViewManager.RenderView("TestInstances", "ResultsDetail", new Dictionary<string, object> {
                                                                                                             { "answers", student_test.Answers.OrderBy(t=>t.Question.Order)},
+                                                                                                            { "test", student_test},
                                                                                                             { "answerStats", (OK, Wrong, DontKnow) }
             });
         }

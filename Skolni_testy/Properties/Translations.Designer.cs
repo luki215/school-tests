@@ -70,6 +70,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Odpověď.
+        /// </summary>
+        public static string Answer {
+            get {
+                return ResourceManager.GetString("Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Školní testy.
         /// </summary>
         public static string AppName {
@@ -228,6 +237,24 @@ namespace Skolni_testy.Properties {
         public static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Označit jako správně.
+        /// </summary>
+        public static string MarkCorrect {
+            get {
+                return ResourceManager.GetString("MarkCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Označit jako špatně.
+        /// </summary>
+        public static string MarkIncorrect {
+            get {
+                return ResourceManager.GetString("MarkIncorrect", resourceCulture);
             }
         }
         

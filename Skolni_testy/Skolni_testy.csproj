@@ -85,6 +85,7 @@
     <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\MainScreenController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\QuestionTypes\FreeAnswerController.cs" />
     <Compile Include="Controllers\QuestionTypes\ChoicesController.cs" />
     <Compile Include="Controllers\SetUpController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -134,7 +135,11 @@
     <Compile Include="Views\Questions\Choices\Edit.cs" />
     <Compile Include="Views\Questions\Choices\New.cs" />
     <Compile Include="Views\Questions\Choices\TeacherResult.cs" />
+    <Compile Include="Views\Questions\FreeAnswer\Edit.cs" />
     <Compile Include="Views\Questions\FreeAnswer\New.cs" />
+    <Compile Include="Views\Questions\FreeAnswer\TeacherResult.cs" />
+    <Compile Include="Views\Questions\FreeAnswer\Result.cs" />
+    <Compile Include="Views\Questions\FreeAnswer\Show.cs" />
     <Compile Include="Views\StudentTests\Index.cs" />
     <Compile Include="Views\StudentTests\Results.cs" />
     <Compile Include="Views\StudentTests\Show.cs" />

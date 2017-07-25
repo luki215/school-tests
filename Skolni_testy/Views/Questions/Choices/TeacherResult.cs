@@ -16,7 +16,7 @@ namespace Skolni_testy.Views.Questions.Choices
 
         public override void Render(Dictionary<string, object> data)
         {
-            appContext.ViewManager.RenderView("Question.Choices", "TeacherResult", data);
+            appContext.ViewManager.RenderView("Questions.Choices", "Result", data, formToRender);
         }
     }
 }
