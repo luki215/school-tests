@@ -84,9 +84,7 @@ namespace Skolni_testy.Views.TeacherTests
             };
             f.Controls.Add(new_q_btn);
 
-
-
-
+           
             var save_test_btn = new MaterialFlatButton();
             save_test_btn.Text = t.Save;
             save_test_btn.Location = new System.Drawing.Point(f.Width-150, f.Height - 38);

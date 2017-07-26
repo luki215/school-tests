@@ -75,7 +75,7 @@ namespace Skolni_testy.Controllers
         {
             var test = (ClassTestInstanceModel)parameters["test"];
 
-            var st_tests = test.StudentTestInstances;
+            var st_tests = test.StudentTestInstances.OrderBy(t=>t.Student.Name);
 
             appContext.ViewManager.RenderView("TestInstances", "Results", new Dictionary<string, object> { { "st_tests", st_tests } });
         }

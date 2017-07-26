@@ -100,6 +100,13 @@ namespace Skolni_testy.Views.TeacherTests
                 test_edit_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Edit", new Dictionary<string, object> { { "id", test.Id } }); };
                 test_panel.Controls.Add(test_edit_btn);
 
+                var test_delete_btn = new Button();
+                test_delete_btn.Text = t.Delete;
+                test_delete_btn.FlatStyle = FlatStyle.Flat;
+                test_delete_btn.Location = new System.Drawing.Point(440, i * 20);
+                test_delete_btn.Click += (s, e) => { appContext.Router.SwitchTo("TeacherTests", "Delete", new Dictionary<string, object> { { "test", test } }); };
+                test_panel.Controls.Add(test_delete_btn);
+
                 i++;
             }
 

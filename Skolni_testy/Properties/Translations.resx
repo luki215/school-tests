@@ -267,4 +267,7 @@
   <data name="MarkIncorrect" xml:space="preserve">
     <value>Označit jako špatně</value>
   </data>
+  <data name="LectureAlreadyExists" xml:space="preserve">
+    <value>Předmět s takovým jménem již existuje</value>
+  </data>
 </root>

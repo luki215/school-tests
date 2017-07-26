@@ -21,8 +21,7 @@ namespace Skolni_testy.Views.Partials
             var active = (string)data["active"];
 
             var menu_items = new[]{ new {Text = t.Tests, Controller = "TeacherTests", Action = "Index"},
-                                     new {Text = t.Classes, Controller = "Classes", Action = "Index"},
-                                     new {Text = t.Teachers, Controller = "Admin", Action = "Index"}
+                                     new {Text = t.Classes, Controller = "Classes", Action = "Index"}
             };
 
             var menu_panel = new Panel();

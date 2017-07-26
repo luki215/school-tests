@@ -214,6 +214,15 @@ namespace Skolni_testy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Předmět s takovým jménem již existuje.
+        /// </summary>
+        public static string LectureAlreadyExists {
+            get {
+                return ResourceManager.GetString("LectureAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Název předmětu.
         /// </summary>
         public static string LectureName {

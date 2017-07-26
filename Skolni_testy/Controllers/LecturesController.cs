@@ -32,16 +32,23 @@ namespace Skolni_testy.Controllers
         public void Create(Dictionary<string, object> parameters)
         {
             var name = (string)parameters["name"];
-
-            using (var scope = new DataAccessScope())
+            var data = new Dictionary<string, object>();
+            try
             {
-                var new_lect = appContext.DB.Lectures.Create();
-                new_lect.Name = name;
+                using (var scope = new DataAccessScope())
+                {
+                    var new_lect = appContext.DB.Lectures.Create();
+                    new_lect.Name = name;
 
-                scope.Complete();
+                    scope.Complete();
+                }
+            } catch{
+                data.Add("errors", Properties.Translations.LectureAlreadyExists);
+                
             }
 
-            appContext.Router.SwitchTo("TeacherTests", "Index", null);
+
+            appContext.Router.SwitchTo("TeacherTests", "Index", data);
         }
     }
 }
