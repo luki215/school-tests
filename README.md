@@ -61,7 +61,7 @@ To be sure, just check how is implemented already existing question types.
 ## Known issues
 Shaolinq - at least in MySQL saves all the strings as varchar(512) so all the question serialized data must pass into this limit.
 
-##Todo's
+## Todo's
 Test editor - ability to remove question - watch out the order in tab text!
 Teachers part - ability to add/remove teachers, edit passwords
 
