@@ -1,6 +1,9 @@
 # School tests - C# semestral project
-This project is for teachers and students - gives teachers ability to create tests and see tests results and students to write these tests. 
-If you want to improve it, feel free to send pull request.
+This project is for teachers and students - gives teachers ability to create tests and see tests results and students to write these tests.  
+If you want to improve it, feel free to send pull request.  
+
+**User documentation [here](https://youtu.be/C8cADQ-b_n0)**
+
 
 ## Technologies
 - .NET 4.6.1
